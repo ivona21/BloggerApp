@@ -21,10 +21,4 @@ public class FirstController extends ApiController {
         String toReturn = service.getRandomString();
         return ResponseEntity.ok().body(toReturn);
     }
-
-    @GetMapping("/all")
-    public ResponseEntity<String> all(){
-        service.getAllApplicationUsers();
-        return ResponseEntity.ok().body("this all went well");
-    }
 }

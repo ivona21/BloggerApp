@@ -18,9 +18,4 @@ public class FirstService implements BllService {
 
         return strings[randomNumber];
     }
-
-    public String getAllApplicationUsers() {
-        repository.findAll();
-        return "Everything is ok";
-    }
 }
