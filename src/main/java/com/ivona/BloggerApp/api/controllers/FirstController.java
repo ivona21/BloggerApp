@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/first")
-public class FirstController {
-
+public class FirstController extends ApiController {
     private FirstService service;
 
-    public FirstController(FirstService service){
+    public FirstController(FirstService service) {
+        super(service);
         this.service = service;
     }
 
@@ -20,5 +20,11 @@ public class FirstController {
     public ResponseEntity<String> getRandomString () {
         String toReturn = service.getRandomString();
         return ResponseEntity.ok().body(toReturn);
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<String> all(){
+        service.getAllApplicationUsers();
+        return ResponseEntity.ok().body("this all went well");
     }
 }
