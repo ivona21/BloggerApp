@@ -1,7 +1,7 @@
-package com.example.BloggerApp;
+package com.ivona.BloggerApp;
 
-import com.example.BloggerApp.api.controllers.FirstController;
-import com.example.BloggerApp.bll.controllers.FirstService;
+import com.ivona.BloggerApp.controllers.FirstController;
+import com.ivona.BloggerApp.bll.controllers.FirstService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

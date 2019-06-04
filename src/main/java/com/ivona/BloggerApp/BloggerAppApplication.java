@@ -1,4 +1,4 @@
-package com.example.BloggerApp;
+package com.ivona.BloggerApp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

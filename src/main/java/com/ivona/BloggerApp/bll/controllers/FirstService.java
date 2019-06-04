@@ -1,4 +1,4 @@
-package com.example.BloggerApp.bll.controllers;
+package com.ivona.BloggerApp.bll.controllers;
 
 import java.util.Random;
 
