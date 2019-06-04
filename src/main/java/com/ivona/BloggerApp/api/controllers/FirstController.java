@@ -1,6 +1,6 @@
-package com.ivona.BloggerApp.controllers;
+package com.ivona.BloggerApp.api.controllers;
 
-import com.ivona.BloggerApp.bll.controllers.FirstService;
+import com.ivona.BloggerApp.bll.services.FirstService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
