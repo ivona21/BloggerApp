@@ -1,6 +1,6 @@
-package com.ivona.BloggerApp.controllers;
+package com.ivona.BloggerApp.api.controllers;
 
-import com.ivona.BloggerApp.bll.controllers.FirstService;
+import com.ivona.BloggerApp.bll.services.FirstService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/first")
-public class FirstController {
-
+public class FirstController extends ApiController {
     private FirstService service;
 
-    public FirstController(FirstService service){
+    public FirstController(FirstService service) {
+        super(service);
         this.service = service;
     }
 

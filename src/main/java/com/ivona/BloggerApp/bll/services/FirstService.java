@@ -1,8 +1,9 @@
-package com.ivona.BloggerApp.bll.controllers;
+package com.ivona.BloggerApp.bll.services;
 
 import java.util.Random;
 
-public class FirstService {
+public class FirstService implements BllService {
+
     public String getRandomString(){
         String [] strings = new String[] {"Ivona", "Symphony", "cats and dogs", "Luster cafe bar",
         "AI", "gamification", "everything and anything", "some spanish words", "good coffee", "nice music", "what did you get?"};
