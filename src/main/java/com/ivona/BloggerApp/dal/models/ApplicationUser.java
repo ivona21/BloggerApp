@@ -13,14 +13,18 @@ public class ApplicationUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="username", nullable = false)
-    @UniqueElements
+    @Column(name="username", nullable = false, unique = true)
     private String username;
 
-    @Column(name="email", nullable = false)
-    @UniqueElements
+    @Column(name="email", nullable = false, unique = true)
     @Email
     private String email;
+
+    @Column(name="first_name")
+    private String firstName;
+
+    @Column(name="last_name")
+    private String lastName;
 
     @Column(name="password", nullable = false)
     private String password;
@@ -39,15 +43,17 @@ public class ApplicationUser {
 
     public ApplicationUser(){};
 
-    public ApplicationUser(Long id, String username, String email, String password, Date dateOfBirth, String jobTitle, String aboutMe) {
-        this.id = id;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-        this.dateOfBirth = dateOfBirth;
-        this.jobTitle = jobTitle;
-        this.aboutMe = aboutMe;
-    }
+//    public ApplicationUser(Long id, String username, String email, String firstName, String lastName, String password, Date dateOfBirth, String jobTitle, String aboutMe) {
+//        this.id = id;
+//        this.username = username;
+//        this.email = email;
+//        this.firstName = firstName;
+//        this.lastName = lastName;
+//        this.password = password;
+//        this.dateOfBirth = dateOfBirth;
+//        this.jobTitle = jobTitle;
+//        this.aboutMe = aboutMe;
+//    }
 
     public Long getId(){
         return id;
@@ -65,6 +71,15 @@ public class ApplicationUser {
 
     public String getEmail() { return email; }
     public void setEmail(String email) {this.email = email; }
+
+    public String getFirstName() {return firstName; }
+    public void setFirstName(String firstName) {this.firstName = firstName; }
+
+    public String getLastName(){ return lastName; }
+    public void setLastName(String lastName){ this.lastName = lastName; }
+
+    public String getProfileImage() { return profileImage; }
+    public void setProfileImage(String profileImage){this.profileImage = profileImage; }
 
     public String getPassword() { return password; }
     public void setPassword(String password) {this.password = password; }

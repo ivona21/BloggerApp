@@ -1,5 +1,6 @@
 package com.ivona.BloggerApp.api.controllers;
 
+import com.ivona.BloggerApp.bll.models.ApplicationUserProfile;
 import com.ivona.BloggerApp.bll.services.ApplicationUsersService;
 import com.ivona.BloggerApp.dal.models.ApplicationUser;
 import org.springframework.http.ResponseEntity;
@@ -18,14 +19,14 @@ public class ApplicationUsersController extends ApiController {
     }
 
     @GetMapping
-    public ResponseEntity<List<ApplicationUser>> all(){
-        List<ApplicationUser> users = service.getAllApplicationUsers();
+    public ResponseEntity<List<ApplicationUserProfile>> all(){
+        List<ApplicationUserProfile> users = service.getAllApplicationUsers();
         return ResponseEntity.ok().body(users);
     }
 
     @GetMapping("/{username}")
-    public ResponseEntity<ApplicationUser> getByUsername(@PathVariable String username) {
-        ApplicationUser user = service.getUserByUsername(username);
+    public ResponseEntity<ApplicationUserProfile> getByUsername(@PathVariable String username) {
+        ApplicationUserProfile user = service.getUserByUsername(username);
         return ResponseEntity.ok().body(user);
     }
 }
