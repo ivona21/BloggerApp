@@ -1,5 +1,7 @@
 package com.ivona.BloggerApp.dal.models;
 
+import org.hibernate.validator.constraints.UniqueElements;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -11,6 +13,7 @@ public class ApplicationUser {
     private Long id;
 
     @Column(name="username", nullable = false)
+    @UniqueElements
     private String username;
 
     @Column(name="profile_image")

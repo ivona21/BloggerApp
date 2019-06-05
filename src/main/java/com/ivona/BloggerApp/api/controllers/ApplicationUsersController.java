@@ -3,9 +3,7 @@ package com.ivona.BloggerApp.api.controllers;
 import com.ivona.BloggerApp.bll.services.ApplicationUsersService;
 import com.ivona.BloggerApp.dal.models.ApplicationUser;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +21,11 @@ public class ApplicationUsersController extends ApiController {
     public ResponseEntity<List<ApplicationUser>> all(){
         List<ApplicationUser> users = service.getAllApplicationUsers();
         return ResponseEntity.ok().body(users);
+    }
+
+    @GetMapping("/{username}")
+    public ResponseEntity<ApplicationUser> getByUsername(@PathVariable String username) {
+        ApplicationUser user = service.getUserByUsername(username);
+        return ResponseEntity.ok().body(user);
     }
 }

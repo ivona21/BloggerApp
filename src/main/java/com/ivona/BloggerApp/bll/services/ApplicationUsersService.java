@@ -14,4 +14,9 @@ public class ApplicationUsersService implements BllService {
         List<ApplicationUser> users = repository.findAll();
         return users;
     }
+
+    public ApplicationUser getUserByUsername(String username) {
+        ApplicationUser foundUser = repository.findByUsername(username);
+        return foundUser;
+    }
 }
