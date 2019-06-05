@@ -3,6 +3,7 @@ package com.ivona.BloggerApp.dal.models;
 import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.util.Date;
 
 @Entity
@@ -15,6 +16,14 @@ public class ApplicationUser {
     @Column(name="username", nullable = false)
     @UniqueElements
     private String username;
+
+    @Column(name="email", nullable = false)
+    @UniqueElements
+    @Email
+    private String email;
+
+    @Column(name="password", nullable = false)
+    private String password;
 
     @Column(name="profile_image")
     private String profileImage;
@@ -30,9 +39,11 @@ public class ApplicationUser {
 
     public ApplicationUser(){};
 
-    public ApplicationUser(Long id, String username, Date dateOfBirth, String jobTitle, String aboutMe) {
+    public ApplicationUser(Long id, String username, String email, String password, Date dateOfBirth, String jobTitle, String aboutMe) {
         this.id = id;
         this.username = username;
+        this.email = email;
+        this.password = password;
         this.dateOfBirth = dateOfBirth;
         this.jobTitle = jobTitle;
         this.aboutMe = aboutMe;
@@ -51,6 +62,12 @@ public class ApplicationUser {
     public void setUsername(String username){
         this.username = username;
     }
+
+    public String getEmail() { return email; }
+    public void setEmail(String email) {this.email = email; }
+
+    public String getPassword() { return password; }
+    public void setPassword(String password) {this.password = password; }
 
     public Date getDateOfBirth(){
         return dateOfBirth;
