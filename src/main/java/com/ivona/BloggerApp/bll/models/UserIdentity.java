@@ -1,14 +1,14 @@
 package com.ivona.BloggerApp.bll.models;
 
-public class ApplicationUserIdentity {
+public class UserIdentity {
     private Long id;
     private String username;
     private String email;
     private String password;
 
-    public ApplicationUserIdentity(){};
+    public UserIdentity(){};
 
-    public ApplicationUserIdentity(Long id, String username, String email, String password) {
+    public UserIdentity(Long id, String username, String email, String password) {
         this.id = id;
         this.username = username;
         this.email = email;

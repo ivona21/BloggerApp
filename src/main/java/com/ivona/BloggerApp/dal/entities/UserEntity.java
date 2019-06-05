@@ -1,6 +1,4 @@
-package com.ivona.BloggerApp.dal.models;
-
-import org.hibernate.validator.constraints.UniqueElements;
+package com.ivona.BloggerApp.dal.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -8,7 +6,7 @@ import java.util.Date;
 
 @Entity
 @Table(name="application_user")
-public class ApplicationUser {
+public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -41,7 +39,7 @@ public class ApplicationUser {
     @Column(name="about_me")
     private String aboutMe;
 
-    public ApplicationUser(){};
+    public UserEntity(){};
 
 //    public ApplicationUser(Long id, String username, String email, String firstName, String lastName, String password, Date dateOfBirth, String jobTitle, String aboutMe) {
 //        this.id = id;
