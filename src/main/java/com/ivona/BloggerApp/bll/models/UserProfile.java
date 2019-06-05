@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-public class ApplicationUserProfile {
+public class UserProfile {
     private Long id;
     private String username;
     private String email;
@@ -18,7 +18,7 @@ public class ApplicationUserProfile {
     private String jobTitle;
     private String aboutMe;
 
-    public ApplicationUserProfile(){};
+    public UserProfile(){};
 
     public Long getId(){
         return id;
